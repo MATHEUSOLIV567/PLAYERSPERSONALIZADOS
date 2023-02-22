@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Player de Vídeo Editável</title>
+</head>
+<body>
+
+  <video id="videoPlayer" width="640" height="360" controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <form>
+    <label for="videoURL">URL do Vídeo:</label>
+    <input type="text" id="videoURL">
+    <button type="button" onclick="changeVideo()">Mudar Vídeo</button>
+  </form>
+
+  <script>
+    function changeVideo() {
+      var videoURL = document.getElementById("videoURL").value;
+      var videoPlayer = document.getElementById("videoPlayer");
+      var source = document.createElement("source");
+      source.setAttribute("src", videoURL);
+      videoPlayer.innerHTML = "";
+      videoPlayer.appendChild(source);
+    }
+  </script>
+
+</body>
+</html>
